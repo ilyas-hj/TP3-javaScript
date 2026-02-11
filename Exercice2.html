@@ -30,7 +30,6 @@ function genererTableau()
     let min = document.getElementById("min").value;
     let max = document.getElementById("max").value;
 
-    // Vérifier champs vides
     if(dimension=="" || min=="" || max=="")
     {
         alert("Tous les champs sont obligatoires !");
@@ -41,7 +40,6 @@ function genererTableau()
     min = Number(min);
     max = Number(max);
 
-    // Vérifier nombres
     if(isNaN(dimension) || isNaN(min) || isNaN(max))
     {
         alert("Les valeurs doivent être des nombres !");
@@ -57,7 +55,6 @@ function genererTableau()
     let div = document.getElementById("resultat");
     div.innerHTML = "";
 
-    // Création du tableau
     let table = document.createElement("table");
     table.border = "1";
 
@@ -74,7 +71,6 @@ function genererTableau()
         ligne.appendChild(cellule);
         compteurColonne++;
 
-        // Si on atteint 10 colonnes
         if(compteurColonne == 10)
         {
             table.appendChild(ligne);
@@ -83,7 +79,6 @@ function genererTableau()
         }
     }
 
-    // Ajouter la dernière ligne si elle n'est pas vide
     if(compteurColonne > 0)
     {
         table.appendChild(ligne);
