@@ -1,1 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Exercice 1</title>
+</head>
+
+<body>
+
+<h2>Formulaire</h2>
+
+<form id="form1" onsubmit="validerFormulaire(); return false;">
+
+    Nom : <input type="text" id="nom"><br><br>
+    Prénom : <input type="text" id="prenom"><br><br>
+    Email : <input type="text" id="email"><br><br>
+
+    <input type="submit" value="Valider">
+    <input type="button" value="Annuler" onclick="annulerFormulaire()">
+
+</form>
+
+<h3>Récapitulatif</h3>
+<div id="recap"></div>
+
+<script>
+
+function validerFormulaire()
+{
+    let nom = document.getElementById("nom").value;
+    let prenom = document.getElementById("prenom").value;
+    let email = document.getElementById("email").value;
+
+    if(nom=="" || prenom=="" || email=="")
+    {
+        alert("Tous les champs sont obligatoires !");
+        return;
+    }
+
+    let div = document.getElementById("recap");
+
+    div.innerHTML =
+        "Nom : " + nom + "<br>" +
+        "Prénom : " + prenom + "<br>" +
+        "Email : " + email;
+}
+
+function annulerFormulaire()
+{
+    document.getElementById("form1").reset();
+    document.getElementById("recap").innerHTML = "";
+}
+
+</script>
+
+</body>
+</html>
 
