@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Exercice 2</title>
+</head>
+
+<body>
+
+<h2>Génération Tableau Aléatoire</h2>
+
+<form onsubmit="genererTableau(); return false;">
+
+    Dimension : <input type="text" id="dimension"><br><br>
+    Limite inférieure : <input type="text" id="min"><br><br>
+    Limite supérieure : <input type="text" id="max"><br><br>
+
+    <input type="submit" value="Générer">
+
+</form>
+
+<br>
+<div id="resultat"></div>
+
+<script>
+
+function genererTableau()
+{
+    let dimension = document.getElementById("dimension").value;
+    let min = document.getElementById("min").value;
+    let max = document.getElementById("max").value;
+
+    if(dimension=="" || min=="" || max=="")
+    {
+        alert("Tous les champs sont obligatoires !");
+        return;
+    }
+
+    dimension = Number(dimension);
+    min = Number(min);
+    max = Number(max);
+
+    if(isNaN(dimension) || isNaN(min) || isNaN(max))
+    {
+        alert("Les valeurs doivent être des nombres !");
+        return;
+    }
+
+    if(min >= max)
+    {
+        alert("La limite inférieure doit être inférieure à la limite supérieure !");
+        return;
+    }
+
+    let div = document.getElementById("resultat");
+    div.innerHTML = "";
+
+    let compteurColonne = 0;
+
+    for(let i=0; i<dimension; i++)
+    {
+        let nombre = Math.floor(Math.random() * (max - min + 1)) + min;
+
+        div.innerHTML += nombre + " ";
+
+        compteurColonne++;
+
+        if(compteurColonne == 10)
+        {
+            div.innerHTML += "<br>";
+            compteurColonne = 0;
+        }
+    }
+}
+
+</script>
+
+</body>
+</html>
