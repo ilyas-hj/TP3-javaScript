@@ -43,6 +43,12 @@
         <th>Nom</th>
         <th>Prénom</th>
         <th>Semestre</th>
+        <th>M1</th>
+        <th>M2</th>
+        <th>M3</th>
+        <th>M4</th>
+        <th>M5</th>
+        <th>M6</th>
         <th>Moyenne</th>
         <th>Résultat</th>
     </tr>
@@ -137,18 +143,42 @@ function ajouterEtudiant()
     let c4 = document.createElement("td");
     c4.innerHTML = semestre;
 
-    let c5 = document.createElement("td");
-    c5.innerHTML = moyenne.toFixed(2);
+let c5 = document.createElement("td");
+c5.innerHTML = n1;
 
-    let c6 = document.createElement("td");
-    c6.innerHTML = resultat;
+let c6 = document.createElement("td");
+c6.innerHTML = n2;
 
-    ligne.appendChild(c1);
-    ligne.appendChild(c2);
-    ligne.appendChild(c3);
-    ligne.appendChild(c4);
-    ligne.appendChild(c5);
-    ligne.appendChild(c6);
+let c7 = document.createElement("td");
+c7.innerHTML = n3;
+
+let c8 = document.createElement("td");
+c8.innerHTML = n4;
+
+let c9 = document.createElement("td");
+c9.innerHTML = n5;
+
+let c10 = document.createElement("td");
+c10.innerHTML = n6;
+
+let c11 = document.createElement("td");
+c11.innerHTML = moyenne.toFixed(2);
+
+let c12 = document.createElement("td");
+c12.innerHTML = resultat;
+
+ligne.appendChild(c1);
+ligne.appendChild(c2);
+ligne.appendChild(c3);
+ligne.appendChild(c4);
+ligne.appendChild(c5);
+ligne.appendChild(c6);
+ligne.appendChild(c7);
+ligne.appendChild(c8);
+ligne.appendChild(c9);
+ligne.appendChild(c10);
+ligne.appendChild(c11);
+ligne.appendChild(c12);
 
     table.appendChild(ligne);
 
